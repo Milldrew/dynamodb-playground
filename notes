@@ -1,3 +1,21 @@
+CREATE -------
+To create a table you need to specify the
+  table name
+  Primary key = partition key | optional sort key
+
+aws dynamodb create-table \
+--table-name movies \
+--attribute-definitions \
+AttributeName=year,AttributeType=N \
+AttributeName=title,AttributeType=S \
+--key-schema \
+  AttributeName=year,KeyType=HASH\
+  AttributeName=title,KayType=Range\
+--provisioned-throughput \
+  ReadCapcityUnits=10, WriteCapcityUnits=10
+--endpoint-url http://localhost:8000
+
+----
 Components
   tables
     items
@@ -35,3 +53,5 @@ To change the primary key create a new table and migrate the data to the new tab
     Data Plane - CRUD operations
     Streams  - Manages Stream and access to stream records
     Transactions - perform atomicity consistency and isolation and durability compliatn operations
+ 
+
