@@ -1,0 +1,37 @@
+Components
+  tables
+    items
+    atributes
+
+partition key
+sort key
+  - effeciently store and retrieve items from the table.
+    sort key example: [country]#[region]#[state]#[county]#[city]#[neighborhood]
+
+primary keys
+  1. partition key
+  2. composite key => partition key and a sort key
+
+To change the primary key create a new table and migrate the data to the new table.
+
+*Locals Secondary Index
+  Max of 5 local secondary indexs per table
+  Sorts the data using the partition key and the index.
+  Can only be changed during table creation.
+  Consumes read and write capcity of base table
+  Supports strongly or eventually consistent reads
+
+*Global Secondary Indexs
+  Queries span all partitions of the base table, and they can use different partition and sort keys from the base table.
+  Can be changed at any time.
+  Creates a new primary key and group of data to find data with. Like a new table. 
+  Create up to 25 global secondary indexes per table.
+  Each global secondary index has its own throughput settings
+  Global secondary indexs support eventually consistent reads only
+  
+*AWS SDK interacting with the dynamo db like psql does with postgresql
+  Operation Categories
+    Control Plane - Create and manage tables work with indexes streams and other objects
+    Data Plane - CRUD operations
+    Streams  - Manages Stream and access to stream records
+    Transactions - perform atomicity consistency and isolation and durability compliatn operations
