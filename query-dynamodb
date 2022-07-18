@@ -1,0 +1,7 @@
+aws dynamodb query \
+  --endpoint-url http://localhost:8000 \
+  --table-name shows \
+  --key-condition-expression "#y = :yr" \
+  --projection-expression "title" \
+  --expression-attribute-names '{"#y": "year"}' \
+  --expression-attribute-values '{":yr": {"N": "1985"}}' \

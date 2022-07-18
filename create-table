@@ -1,0 +1,14 @@
+aws dynamodb create-table \
+  --table-name shows \
+  --attribute-definitions \
+      AttributeName=year,AttributeType=N \
+      AttributeName=title,AttributeType=S \
+  --key-schema \
+      AttributeName=year,KeyType=HASH \
+      AttributeName=title,KeyType=Range \
+  --billing-mode PROVISIONED \
+  --provisioned-throughput \
+      ReadCapacityUnits=10,WriteCapacityUnits=10 \
+  --endpoint-url http://localhost:8000
+
+

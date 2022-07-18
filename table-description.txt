@@ -1,0 +1,38 @@
+    "TableDescription": {
+        "AttributeDefinitions": [
+            {
+                "AttributeName": "year",
+                "AttributeType": "N"
+            },
+            {
+                "AttributeName": "title",
+                "AttributeType": "S"
+            }
+        ],
+        "TableName": "shows",
+        "KeySchema": [
+            {
+                "AttributeName": "year",
+                "KeyType": "HASH"
+            },
+            {
+                "AttributeName": "title",
+                "KeyType": "RANGE"
+            }
+        ],
+        "TableStatus": "ACTIVE",
+        "CreationDateTime": "2022-07-16T13:32:26.044000-06:00",
+        "ProvisionedThroughput": {
+            "LastIncreaseDateTime": "1969-12-31T17:00:00-07:00",
+            "LastDecreaseDateTime": "1969-12-31T17:00:00-07:00",
+            "NumberOfDecreasesToday": 0,
+            "ReadCapacityUnits": 10,
+            "WriteCapacityUnits": 10
+        },
+        "TableSizeBytes": 0,
+        "ItemCount": 0,
+        "TableArn": "arn:aws:dynamodb:ddblocal:000000000000:table/shows"
+    }
+}
+:
+

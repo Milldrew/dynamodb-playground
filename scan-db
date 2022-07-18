@@ -1,0 +1,6 @@
+aws dynamodb scan \
+  --table-name shows \
+  --endpoint-url http://localhost:8000 \
+  --filter-expression "title = :name" \
+  --expression-attribute-values '{":name": {"S":"Example 8"}}' \
+  --return-consumed-capacity 'TOTAL'

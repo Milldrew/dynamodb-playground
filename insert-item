@@ -1,0 +1,5 @@
+aws dynamodb put-item \
+  --endpoint-url http://localhost:8000 \
+  --table-name shows \
+  --item \
+    '{"year": {"N": "1985"}, "title": {"S": "Example 8"}}'\

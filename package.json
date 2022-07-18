@@ -1,0 +1,12 @@
+{
+  "name": "dynamodb-playground",
+  "type": "module",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Milldrew/dynamodb-playground.git",
+  "author": "Andrew Miller <andrew.patrick.miller.2021@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "aws-sdk": "^2.1176.0"
+  }
+}
